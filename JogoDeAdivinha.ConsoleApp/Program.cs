@@ -54,6 +54,8 @@ internal class Program
             }
 
             Console.ReadLine();
+
+            System.Console.WriteLine("oi");
         }
 
 
