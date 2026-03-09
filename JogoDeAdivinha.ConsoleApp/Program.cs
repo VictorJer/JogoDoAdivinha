@@ -52,6 +52,8 @@ internal class Program
             {
                 break;
             }
+
+            Console.ReadLine();
         }
 
 
