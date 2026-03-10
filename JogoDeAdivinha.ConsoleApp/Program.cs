@@ -10,6 +10,7 @@ internal class Program
         {
             int[] numerosDigitados = new int[100];
             int contadorDeNumerosDigitados = 0;
+            int pontuacao = 1000;
 
             Console.Clear();
 
@@ -30,6 +31,9 @@ internal class Program
             int numeroMaximo = 0;
             int tentativasMaximas = 0;
 
+
+
+            // interface
             switch (dificuldade)
             {
                 case "1":
@@ -55,6 +59,8 @@ internal class Program
                     continue;
             }
 
+
+            // numero aleatorio
             int numeroAleatorio = RandomNumberGenerator.GetInt32(1, numeroMaximo + 1);
 
             for (int tentativa = 1; tentativa <= tentativasMaximas; tentativa++)
@@ -117,12 +123,38 @@ internal class Program
                     Console.ReadLine();
                 }
 
+
+                int diferencaNumerica = Math.Abs(numeroAleatorio - numeroJogadorInti); // Math.Abs pega o numero seco
+
+
+                if (diferencaNumerica >= 10)
+                {
+                    pontuacao -= 100;
+                }
+                else if (diferencaNumerica >= 5)
+                {
+                    pontuacao -= 50;
+                }
+                else
+                {
+                    pontuacao -= 20;
+                }
+
+
+                System.Console.WriteLine("sua pontuação é: " + pontuacao);
+                System.Console.WriteLine("ENTER para continuar...");
+                System.Console.WriteLine("--------------------------------");
+                Console.ReadLine();
+
+
+
                 if (tentativa == tentativasMaximas)
                 {
                     System.Console.WriteLine($"você chegou no numero maximo de tentativas, o numero era {numeroAleatorio}");
                     System.Console.WriteLine("----------------------------------------");
                     break;
                 }
+
             }
 
 
