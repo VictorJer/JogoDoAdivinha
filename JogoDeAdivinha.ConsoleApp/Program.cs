@@ -48,14 +48,12 @@ internal class Program
             System.Console.WriteLine("Quer continuar (S/N): ");
             string? SoN = Console.ReadLine();
 
-            if (SoN.ToUpper() != "S")
+            if (SoN?.ToUpper() != "S")
             {
                 break;
             }
 
             Console.ReadLine();
-
-            System.Console.WriteLine("oi");
         }
 
 
