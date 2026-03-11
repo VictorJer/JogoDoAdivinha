@@ -4,12 +4,10 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        bool verificador = true;
 
-        while (verificador == true)
+
+        do
         {
-
-
             //1. tela de menu e espera o input do usuario
             string? dificuldade = ExibirMenuDificuldade();
 
@@ -23,11 +21,7 @@ internal class Program
             execuçãoDoJogo(numeroMaximo, tentativasMaximas);
 
             // 4. pergunta se o jogador vai continuar o jogo
-            if (JogadorDesejaContinuar() != true)
-            {
-                break;
-            }
-        }
+            }while (JogadorDesejaContinuar() == true);
 
 
     }
